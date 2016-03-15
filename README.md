@@ -1,2 +1,2 @@
-# School_Projects
-Repository to save school projects
+# Small_Projects
+repository for allof my small projects
