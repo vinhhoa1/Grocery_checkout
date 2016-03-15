@@ -199,7 +199,7 @@ int main()
 	D->showInfo();
 
 	cout << "SORT " << endl;
-	//TASK 3: This code shows the use of “sort()”
+	//TASK 3: This code shows the use of â€œsort()â€
 	linkedList * list = new linkedList();
 	list->appendNode('g');
 	list->appendNode('c');
