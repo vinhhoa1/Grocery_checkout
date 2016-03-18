@@ -1,0 +1,10 @@
+//HOA P NGUYEN
+// CS 1337.002 - Computer Science I - S15
+//Instructor: Miguel Angel Razo - Razo;
+// PROJECT
+//COMPILER VISUAL STUDIO 2013
+// April 23, 2015
+//Read questions and answers from text file
+//User will answer each question by enter a,b,c or d 
+// User can see their score and what question they answered wrong
+//User quiz result can be output to a text file
