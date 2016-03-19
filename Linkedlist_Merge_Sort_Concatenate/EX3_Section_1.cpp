@@ -1,7 +1,7 @@
 // Hoa P Nguyen
 //cs 1337.002 - computer science i - s15
 
-//Merge, Sort, concatenate linkedlist
+//Merge, Sort, appendNode linkedlist
 
 #include <iostream>
 #include <fstream>
@@ -200,7 +200,7 @@ int main()
 	D->showInfo();
 
 	cout << "SORT " << endl;
-	//TASK 3: This code shows the use of “sort()”
+	//TASK 3: This code shows the use of â€œsort()â€
 	linkedList * list = new linkedList();
 	list->appendNode('g');
 	list->appendNode('c');
