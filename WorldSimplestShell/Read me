@@ -1,0 +1,13 @@
+/*
+* World's simplest shell.
+* Loops, reads input and tries to execute it.
+* Note: no tokenization, can be ^C'd, but does look at PATH
+*       not sorted
+*
+* ./simple-shell
+* $$ ls
+* $$ /bin/ls
+* $$ /bin/ls -la # error
+* $$ ^C
+*
+*/
