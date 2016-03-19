@@ -2,4 +2,5 @@
 // Hoa P Nguyen
 //cs 1337.002 - computer science i - s15
 
-//Merge, Sort, concatenate linkedlist
+//Merge, Sort, append Nodes linkedlist
+//There is no concatenate in this file, it was a mistake.
