@@ -1,0 +1,228 @@
+/*
+Hoa P Nguyen
+Dr.Tyson McMillan
+Ref Menu
+*/
+#include <iostream>
+#include <cstdlib> //to be able to use system("cls"); in multiple platforms
+#include "Input_Validation.h"
+#include <Windows.h>
+using namespace std;
+
+HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+void doubleNum(int &);
+void increaseNum(int &);
+void decreaseNum(int &);
+void displayMenu();
+void displayPatterns();
+
+int main()
+{
+	int value = 4;
+	cout << "In main, value is " << value << endl;
+	cout << "Now calling doubleNum..." << endl;
+	doubleNum(value);
+	cout << "Now back in main. value is " << value << endl;
+
+	//using the pass by reference premise on C++ menu
+	cout << "\n\nLet's practice this premise on a C++ Menu" << endl;
+	displayMenu(); //function call
+
+
+
+	displayPatterns();
+
+	return 0;
+} 
+
+void doubleNum(int &refVar) // & pass by reference.
+{
+	refVar *=2;
+}
+void increaseNum(int &counter)
+{
+	counter++;
+}
+void decreaseNum(int &counter)
+{
+	counter--;
+}
+void displayMenu()
+{
+	int price = 0;
+	int sum = 0;
+	int mainDecision = 0;
+	int greenTeaCounter = 0;
+	int eggrollcounter = 0;
+	int pizzacounter = 0;
+	int noodlesoupcounter = 0;
+	int burgercounter = 0;
+	do
+	{
+		if(mainDecision == 0) //first run of the menu
+		{
+			cout << "\nWELCOME TO DR. T'S RESTAURANT!!!" << endl;
+		}
+
+		if(mainDecision == 1)
+		{
+			increaseNum(greenTeaCounter);
+			
+		}
+
+		if(mainDecision == -1)
+		{
+			if(greenTeaCounter !=0)
+			{
+				decreaseNum(greenTeaCounter);
+				
+			}
+			else
+			{
+				cout << "Negetive: Green Tea Order must be > 0 to ";
+				cout << "subtract (please try again)" << endl;
+			}
+		}
+		if(mainDecision == 2)
+		{
+			increaseNum(eggrollcounter);
+		}
+		if(mainDecision == -2)
+		{
+			if(eggrollcounter !=0)
+			{
+				decreaseNum(eggrollcounter);
+			}
+			else
+			{
+				cout << "Negetive: egg roll Order must be > 0 to ";
+				cout << "subtract (please try again)" << endl;
+			}
+		}
+
+		if(mainDecision == 3)
+		{
+			increaseNum(pizzacounter);
+		}
+		if(mainDecision == -3)
+		{
+			if(pizzacounter !=0)
+			{
+				decreaseNum(pizzacounter);
+			}
+			else
+			{
+				cout << "Negetive: Pizza Order must be > 0 to ";
+				cout << "subtract (please try again)" << endl;
+			}
+		}
+
+		if(mainDecision == 4)
+		{
+			increaseNum(noodlesoupcounter);
+		}
+		if(mainDecision == -4)
+		{
+			if(noodlesoupcounter !=0)
+			{
+				decreaseNum(noodlesoupcounter);
+			}
+			else
+			{
+				cout << "Negetive: Noodle Soup Order must be > 0 to ";
+				cout << "subtract (please try again)" << endl;
+			}
+		}
+
+		if(mainDecision == 5)
+		{
+			increaseNum(burgercounter);
+		}
+		if(mainDecision == -5)
+		{
+			if(burgercounter !=0)
+			{
+				decreaseNum(burgercounter);
+			}
+			else
+			{
+				cout << "Negetive: Burger Order must be > 0 to ";
+				cout << "subtract (please try again)" << endl;
+			}
+		}
+
+		cout << "\n\nMENU" << endl;
+		cout << "Item *********** [ Count ]" << endl;
+		SetConsoleTextAttribute(console, 215);
+		cout << "1) $1 Green Tea *** [ " << greenTeaCounter << " ] -1 to remove" << endl;
+		SetConsoleTextAttribute(console, 222);
+		cout << "2) $2 Egg Roll *** [ " << eggrollcounter << " ] -2 to remove" << endl;
+		SetConsoleTextAttribute(console, 207);
+		cout << "3) $5 Pizza *** [ " << pizzacounter << " ] -3 to remove" << endl;
+		SetConsoleTextAttribute(console, 155);
+		cout << "4) $7 Noodle Soup *** [ " << noodlesoupcounter << " ] -4 to remove" << endl;
+		SetConsoleTextAttribute(console, 177);
+		cout << "5) $3 Burger *** [ " << burgercounter << " ] -5 to remove" << endl;
+		SetConsoleTextAttribute(console, 007);
+		sum = (greenTeaCounter * 1) + ( eggrollcounter * 2) + (pizzacounter * 5) + (noodlesoupcounter * 7) + (burgercounter *3);
+		cout << "You have to pay: $" << sum << endl;
+		
+
+
+		
+		 while (true)
+    {
+      
+		cout << "Please enter an item number aboce (-9 to exit): ";
+
+        try
+        {
+			mainDecision = getValidatedInput<int>();
+        }
+        catch (exception e)
+        {
+            cerr << e.what() << endl;
+            continue;
+        }
+
+        break;
+    }
+		 if (mainDecision == -9)
+		 {
+			 SetConsoleTextAttribute(console, 250);
+			 cout << "Closing the program" << endl;
+			 system ("pause");
+		 }
+		 
+		system("cls");
+
+	}while(mainDecision != -9);
+}
+
+void displayPatterns()
+{
+	
+	for(int i=0; i <= 3; i++)
+	{
+		cout << "*******" << endl;
+	}
+	cout << endl;
+	
+
+	for (int b=0; b <= 7;b++)
+	{
+		cout << endl;
+		for (int c= 0; c<= 7;c++)
+		{
+			cout << "*";
+			
+		}
+		
+	}
+
+
+
+
+
+
+}
